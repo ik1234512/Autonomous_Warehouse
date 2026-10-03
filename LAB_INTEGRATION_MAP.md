@@ -4,10 +4,10 @@
 |---|---|---|---|
 | ReAct Lab | Human language -> structured action | `agent.py`, `llm_client.py`, `react_loop_lab.py`; adapted in `capstone_react_agent.py` | Integrated |
 | Updated Lab | Formal safety gate + reflection | `verifier.py`; adapted in `capstone_smt_guard.py` | Integrated |
-| MDP Lab | Stochastic global route planning | `warehouse_mdp.py` (new tabular value iteration over warehouse cells) | Integrated as opt-in planner; A* fallback retained. Original MDP lab source files are not in this ZIP, so this is a capstone-side implementation of the algorithm rather than a direct code port |
+| MDP Lab | Stochastic global route planning | `warehouse_mdp.py` (new tabular value iteration over warehouse cells) | Integrated as opt-in planner; A* fallback retained.|
 | Q-learning Lab | Off-policy adaptive control | `qlearning_lab.py` is a gripper/wear task; `warehouse_qlearning.py` adapts Q-learning to the navigation state used by the capstone | Integrated as optional comparison controller; original grasp lab kept separate |
 | RL Prediction Lab | TD/MC value estimation | `td0_lab.py`, `mc_lab.py`, `nstep_td_lab.py` | Future diagnostics |
-| Bandits Lab | Online route-strategy exploration | `route_bandit.py` (UCB1 over A* and value-iteration choices) | Integrated as opt-in route selector; not a safety authority. Original Bandits lab source files are not in this ZIP, so this is a capstone-side implementation |
+| Bandits Lab | Online route-strategy exploration | `route_bandit.py` (UCB1 over A* and value-iteration choices) | Integrated as opt-in route selector; not a safety authority.|
 | Reference warehouse | Integration architecture | `capstone_*`, `warehouse_*`, `orchestrator.py` | Base |
 
 
