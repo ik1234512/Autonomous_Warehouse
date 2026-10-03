@@ -139,9 +139,6 @@ Multiple requested items can be assigned to one robot through capstone-side queu
 | `warehouse_sarsa.py`, `warehouse_rl_env.py` | SARSA training and warehouse RL environment |
 | `perception.py`, `hmm_environment.py`, `hmm_filter.py` | HMM perception and filtering |
 
-### Legacy and laboratory files
-
-`agent.py` and `verifier.py` contain the earlier SMT Reflection Loop lab. `react_loop_lab.py`, `scripted_llm.py`, `sriroute_tools.py`, `sriroute_tools_db.py`, `fake_db.py`, and `llm_client.py` are a separate SriRoute/ReAct exercise. `packbot_env.py`, `qlearning_lab.py`, `sarsa_lab.py`, and `rl_utils.py` are PackBot reinforcement-learning laboratory files. `visualizer.py` is a standalone Matplotlib path helper, and `main.py` is an older warehouse demonstration. These files should be understood as separate or reused laboratory material, not as proof that every laboratory feature is part of the live dashboard path.
 
 ### Tests and configuration
 
