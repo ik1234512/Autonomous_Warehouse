@@ -1,0 +1,3 @@
+This project taught me that making AI useful and safe is just as important as making it smart. I learned how LLMs can turn natural-language commands into 
+structured plans, but also why they need proper checks and constraints. The most interesting part was bringing everything together, from route planning and 
+conflict handling to perception and execution. It showed me how different AI techniques can work together to build a reliable system.
