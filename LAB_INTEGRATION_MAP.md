@@ -10,9 +10,6 @@
 | Bandits Lab | Online route-strategy exploration | `route_bandit.py` (UCB1 over A* and value-iteration choices) | Integrated as opt-in route selector; not a safety authority. Original Bandits lab source files are not in this ZIP, so this is a capstone-side implementation |
 | Reference warehouse | Integration architecture | `capstone_*`, `warehouse_*`, `orchestrator.py` | Base |
 
-## Principle
-
-Do not merge unrelated lab code mechanically. Reuse the algorithmic implementation and preserve each component's responsibility behind a small interface.
 
 ## New integration controls
 
