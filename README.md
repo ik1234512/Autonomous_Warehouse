@@ -4,9 +4,9 @@
 
 ## 1. Project Overview
 
-This project is a Track A Smart Autonomous Warehouse capstone. It models a multi-robot warehouse in software and combines a natural-language human interface with formal dispatch verification, probabilistic perception, classical route planning, conflict handling, adaptive movement, persistent memory, and a live dashboard.
+This project is an Autonomous Warehouse project. It models a multi-robot warehouse in software and combines a natural-language human interface with formal dispatch verification, probabilistic perception, classical route planning, conflict handling, adaptive movement, persistent memory, and a live dashboard.
 
-The primary integrated demonstration is the Tkinter application in `capstone_dashboard_multi_robot.py`. A human enters a warehouse request, the application interprets it through a ReAct/LLM agent, validates and verifies the proposed assignment, and only then allows the existing warehouse execution components to move simulated robots. The implementation reuses existing warehouse and laboratory components where appropriate; it does not claim physical robot or hardware support.
+The primary integrated demonstration is the Tkinter application in `capstone_dashboard_multi_robot.py`. A human enters a warehouse request, the application interprets it through a ReAct/LLM agent, validates and verifies the proposed assignment, and only then allows the existing warehouse execution components to move simulated robots. The implementation reuses existing warehouse and laboratory components where appropriate.
 
 ## 2. What the System Demonstrates
 
@@ -16,7 +16,7 @@ The primary integrated demonstration is the Tkinter application in `capstone_das
 | Perception | `RobotPerception`, `HMMSensor`, and `HMMFilter` update estimated position from noisy observations |
 | Route finder and conflict resolver | `ForkliftPlanner.a_star()` plans grid routes; `ConflictResolver` uses depth-2 alpha-beta Minimax for immediate collision or swap risks |
 | Adaptive pilot | `WarehouseSARSA` is the existing on-policy local controller; `WarehouseQLearning` is an optional off-policy comparison controller. Both are constrained by the planned route |
-| Stochastic planning and exploration | `WarehouseMDP` solves a noisy grid MDP with value iteration; `UCB1Bandit` is a new capstone-side UCB1 implementation (the original Bandits lab source files were not in the ZIP) and can select between A* and value iteration based on route-length reward |
+| Stochastic planning and exploration | `WarehouseMDP` solves a noisy grid MDP with value iteration; `UCB1Bandit` is a new capstone UCB1 implementation and can select between A* and value iteration based on route-length reward |
 | Memory | `WarehouseMemory` stores SQLite runs, events, robot snapshots, task snapshots, and item snapshots |
 | Live dashboard | Tkinter renders the map, robots, estimates, routes, task state, events, and explicit ReAct trace fields |
 
@@ -178,7 +178,7 @@ Start the integrated dashboard from the repository root:
 python capstone_dashboard_multi_robot.py
 ```
 
-The application requires Tkinter and a usable OpenAI API key with network access. The standalone capstone demonstration in `capstone_main.py` is a separate CLI-style path and is not the Tkinter dashboard.
+The application requires Tkinter and a usable OpenAI API key with network access.
 
 ## 15. Example Commands
 
