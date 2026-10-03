@@ -223,9 +223,5 @@ The repository contains three focused test files:
 
 The SMT test file can also be run directly with `python test_capstone_neurosymbolic.py`. The repository does not contain an automated full GUI or API-backed end-to-end test. Test execution requires the Python dependencies, while API-free unit tests do not require an OpenAI request.
 
-## 18. Known Limitations
-
-This is a warehouse simulation rather than a physical-robot system. The sensor and movement models are simplified and stochastic. Physical movement deducts a fixed battery amount per movement, while the SMT payload supports a configurable weight-based drain expression. SARSA is retrained for each immediate waypoint, which can make execution slow. The dashboard uses hardcoded default task and reserved-goal identifiers. Task deadlines and priorities are stored/displayed but are not used by the demonstrated SMT, A*, SARSA, or scheduling decisions.
-
 The current model stores `Task.assigned_robot`, while several capstone serialization and rendering paths read `assigned_robot_id`; consequently, some context, SQLite task snapshots, or GUI task displays may show no assigned robot even though `Task.assign()` performed the assignment. This documentation records the observed behavior and does not modify the implementation.
 
