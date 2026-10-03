@@ -1,5 +1,0 @@
-The project currently runs in a simulated warehouse environment, so its behaviour may not fully reflect real-world conditions. 
-The system also depends on the accuracy of its sensor estimates and the decisions made by its planning algorithms. 
-While the LLM handles user commands, all actions must pass through validation and safety checks before execution.\
-These checks help prevent invalid assignments, collisions and unsafe movements.
-However, they do not guarantee complete safety, so the system should still be tested thoroughly before any real-world deployment.

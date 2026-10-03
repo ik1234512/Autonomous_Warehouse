@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "C:\Users\Ishaan Kurian\Downloads\capstone_warehouse_integrated\capstone_warehouse\capstone_dashboard_multi_robot.py", line 866, in _run_capstone
-    raise RuntimeError(
-    ...<2 lines>...
-    )
-RuntimeError: Safety violation: Robot 1 entered Robot 2's delivery goal (18, 12)
