@@ -4,19 +4,19 @@
 
 ## 1. Project Overview
 
-This project is a Track A Smart Autonomous Warehouse capstone. It models a multi-robot warehouse in software and combines a natural-language human interface with formal dispatch verification, probabilistic perception, classical route planning, conflict handling, adaptive movement, persistent memory, and a live dashboard.
+This project is an Autonomous Warehouse capstone. It models a multi-robot warehouse in software and combines a natural-language human interface with formal dispatch verification, probabilistic perception, classical route planning, conflict handling, adaptive movement, persistent memory, and a live dashboard.
 
-The primary integrated demonstration is the Tkinter application in `capstone_dashboard_multi_robot.py`. A human enters a warehouse request, the application interprets it through a ReAct/LLM agent, validates and verifies the proposed assignment, and only then allows the existing warehouse execution components to move simulated robots. The implementation reuses existing warehouse and laboratory components where appropriate; it does not claim physical robot or hardware support.
+The primary integrated demonstration is the Tkinter application in `capstone_dashboard_multi_robot.py`. A human enters a warehouse request, the application interprets it through a ReAct/LLM agent, validates and verifies the proposed assignment, and only then allows the existing warehouse execution components to move simulated robots. The implementation reuses existing warehouse and laboratory components where appropriate.
 
 ## 2. What the System Demonstrates
 
-| Rubric layer | Repository implementation |
+| implementation |
 |---|---|
 | Human interface and safety filter | Tkinter command entry, `WarehouseReActAgent`, Pydantic `AgentStep`, and the Z3-based `verify_dispatch_smt()` gate |
 | Perception | `RobotPerception`, `HMMSensor`, and `HMMFilter` update estimated position from noisy observations |
 | Route finder and conflict resolver | `ForkliftPlanner.a_star()` plans grid routes; `ConflictResolver` uses depth-2 alpha-beta Minimax for immediate collision or swap risks |
 | Adaptive pilot | `WarehouseSARSA` is the existing on-policy local controller; `WarehouseQLearning` is an optional off-policy comparison controller. Both are constrained by the planned route |
-| Stochastic planning and exploration | `WarehouseMDP` solves a noisy grid MDP with value iteration; `UCB1Bandit` is a new capstone-side UCB1 implementation (the original Bandits lab source files were not in the ZIP) and can select between A* and value iteration based on route-length reward |
+| Stochastic planning and exploration | `WarehouseMDP` solves a noisy grid MDP with value iteration; `UCB1Bandit` is a new implementation for the warehouse (a modification of the original bandit) and can select between A* and value iteration based on route-length reward |
 | Memory | `WarehouseMemory` stores SQLite runs, events, robot snapshots, task snapshots, and item snapshots |
 | Live dashboard | Tkinter renders the map, robots, estimates, routes, task state, events, and explicit ReAct trace fields |
 
@@ -27,7 +27,7 @@ Human command in Tkinter
           |
           v
 WarehouseReActAgent.run()
-  OpenAI chat completion + Pydantic AgentStep
+  OpenAI chat completion + Pydantic 
           |
           v
 verify_dispatch_smt()  <---- authoritative WarehouseState
@@ -97,7 +97,7 @@ The integrated dashboard creates `WarehouseMemory("warehouse_memory.db")`. `caps
 
 ## 9. Live Dashboard
 
-The dashboard is built with Python Tkinter and `ttk`, not a web framework. It provides:
+The dashboard is built with Python Tkinter and `ttk`, It provides
 
 - a warehouse grid map;
 - true and HMM-estimated robot positions;
@@ -164,11 +164,11 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-The listed packages are `z3-solver==4.13.3.0`, `pydantic==2.9.2`, `openai==1.51.2`, and `python-dotenv==1.0.1`. Tkinter, SQLite, and threading are provided outside `requirements.txt`. On Debian/Ubuntu Linux, install Tkinter for the selected Python interpreter with the system package commonly named `python3-tk` if it is absent.
+The listed packages are `z3-solver==4.13.3.0`, `pydantic==2.9.2`, `openai==1.51.2`, and `python-dotenv==1.0.1`. Tkinter, SQLite, and threading are provided outside `requirements.txt`.
 
 ## 13. Configuration
 
-Copy `.env.example` to `.env` and set the variable `OPENAI_API_KEY` using a credential supplied through the user's own environment configuration. Never commit `.env` or expose its value. `.gitignore` is configured to ignore `.env`.
+Copy `.env.example` to `.env` and set the variable `OPENAI_API_KEY` using your own credential. `.gitignore` is configured to ignore `.env`.
 
 ## 14. Running the Project
 
